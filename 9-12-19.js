@@ -54,3 +54,20 @@ function getMiddle(s) {
 function lovefunc(flower1, flower2){
     return (flower1 + flower2) % 2 == 0 ? false : true
   }
+
+
+//   Write simple .camelCase method (camel_case function in PHP, CamelCase in C# or camelCase in Java) for strings. All words must have their first letter capitalized without spaces.
+
+// For instance:
+
+// "hello case".camelCase() => HelloCase
+// "camel case word".camelCase() => CamelCaseWord
+
+String.prototype.camelCase=function(){
+    let newStr = ''
+    for (let i = 0; i < this.length; i++) {
+      i == 0 || this[i - 1] == ' ' ? newStr += this[i].toUpperCase() : newStr += this[i]
+    }
+    
+    return newStr.split(' ').join('')
+  }
