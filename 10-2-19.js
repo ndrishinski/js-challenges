@@ -94,3 +94,17 @@ function multipleSplit(string, delimiters=[]){
     return answ.split(' ').filter(item => item.length)
   
   }
+
+//   Simple, given a string of words, return the length of the shortest word(s).
+
+// String will never be empty and you do not need to account for different data types.
+
+function findShort(s){
+    let arr = s.split(' ')
+    let top = arr[0]
+  
+    for (let i = 1; i < arr.length; i++) {
+      top.length > arr[i].length ? top = arr[i] : null;
+    }
+    return top.length
+  }
