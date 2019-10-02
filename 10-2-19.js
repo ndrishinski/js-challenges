@@ -70,3 +70,27 @@ function findNextSquare(sq) {
     let sqrt = Math.sqrt(sq)
       return sq % sqrt == 0 ? (sqrt + 1) * (sqrt + 1) : -1 
     }
+
+//     Your task is to write function which takes string and list of delimiters as an input and returns list of strings/characters after splitting given string.
+
+// Example:
+
+// multiple_split('Hi, how are you?', [' ']) => # [Hi,', 'how', 'are', 'you?']
+// multiple_split('1+2-3', ['+', '-']) => ['1', '2', '3']
+// List of delimiters is optional and can be empty, so take that into account.
+
+// Important note: Result cannot contain empty string.
+
+function multipleSplit(string, delimiters=[]){
+    let answ = ''
+      if (!delimiters.length && string) return [string]
+     for (let i = 0; i < string.length; i++) {
+       if (delimiters.indexOf(string[i]) != -1) {
+         answ += ' '
+       } else {
+         answ += string[i] 
+       }
+     }
+    return answ.split(' ').filter(item => item.length)
+  
+  }
