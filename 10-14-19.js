@@ -68,3 +68,71 @@ function maskify(cc) {
     return cc.length < 4 ? cc : '#'.repeat(cc.length - 4) + cc.substring(cc.length - 4)
   }
   
+//   Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+
+//   doubleChar("String") ==> "SSttrriinngg"
+  
+//   doubleChar("Hello World") ==> "HHeelllloo  WWoorrlldd"
+  
+//   doubleChar("1234!_ ") ==> "11223344!!__  "
+
+function doubleChar(str) {
+    return str.split('').map(item => item.repeat(2)).join('')
+  }
+//   There is an array with some numbers. All numbers are equal except for one. Try to find it!
+
+// findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+// findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+// It’s guaranteed that array contains more than 3 numbers.
+
+// The tests contain some very huge arrays, so think about performance.
+
+// This is the first kata in series:
+
+// function findUniq(arr) {
+//   return arr[0] != arr[1] && arr[0] != arr[2] ? arr[0] : arr.filter(item => item != arr[0])[0]
+// }
+
+// Given a string of words, you need to find the highest scoring word.
+
+// Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+
+// You need to return the highest scoring word as a string.
+
+// If two words score the same, return the word that appears earliest in the original string.
+
+// All letters will be lowercase and all inputs will be valid.
+
+function high(x){
+  let alpha = 'abcdefghijklmnopqrstuvwxyz'
+  let brokenUp = x.split(' ');
+  let scores = [];
+  
+  brokenUp.map(item => {
+  let temp = 0;
+    for (let i = 0; i < item.length; i++) {
+      temp += alpha.indexOf(item[i]) + 1
+    }
+      scores.push(temp)
+  })
+  let larg = 0;
+  let large = 0;
+  scores.map((item, ind, arr) => {
+    if (item > larg) {
+      larg = item
+      large = ind
+    }
+  })
+  return brokenUp[large]
+}
+
+// For every good kata idea there seem to be quite a few bad ones!
+
+// In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. If there are no good ideas, as is often the case, return 'Fail!'.
+
+function well(x){
+  let good = x.filter(item => item == 'good')
+  if (good.length > 2) return 'I smell a series!'
+  if (!good.length) return 'Fail!'
+  else return 'Publish!'
+}
