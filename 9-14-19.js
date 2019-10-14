@@ -37,3 +37,34 @@ function repeatStr (n, s) {
     }
     return newS
   }
+
+//   Complete the solution so that it reverses all of the words within the string passed in.
+
+// Example:
+
+// reverseWords("The greatest victory is that which requires no battle")
+// // should return "battle no requires which that is victory greatest The"
+
+function reverseWords(str){
+    return str.split(' ').reverse().join(' '); // reverse those words
+  }
+
+//   Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
+
+// Your task is to write a function maskify, which changes all but the last four characters into '#'.
+
+// Examples
+// maskify("4556364607935616") == "############5616"
+// maskify(     "64607935616") ==      "#######5616"
+// maskify(               "1") ==                "1"
+// maskify(                "") ==                 ""
+
+// // "What was the name of your first pet?"
+// maskify("Skippy")                                   == "##ippy"
+// maskify("Nananananananananananananananana Batman!") == "####################################man!"
+
+
+function maskify(cc) {
+    return cc.length < 4 ? cc : '#'.repeat(cc.length - 4) + cc.substring(cc.length - 4)
+  }
+  
