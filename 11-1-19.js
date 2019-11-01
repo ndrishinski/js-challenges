@@ -80,3 +80,18 @@ function findMissingLetter(array) {
   }
     
 }
+
+// Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+// Examples
+// pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+// pigIt('Hello world !');     // elloHay orldway !
+
+function pigIt(str){
+  let punc = '.,!?'
+  let arr = str.split(' ');
+  return arr.map(item => {
+    let fir = item.slice(0, 1)
+    return punc.includes(item) ? item :`${item.substring(1)}${fir}ay`
+  }).join(' ')
+}
