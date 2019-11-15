@@ -42,3 +42,29 @@ function rentalCarCost(d) {
     let tot = d * 40;
     return d >= 7 ? tot - 50 : d >= 3 && d < 7 ? tot - 20 : tot
   }
+
+//   Write Number in Expanded Form
+// You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+// expandedForm(12); // Should return '10 + 2'
+// expandedForm(42); // Should return '40 + 2'
+// expandedForm(70304); // Should return '70000 + 300 + 4'
+// NOTE: All numbers will be whole numbers greater than 0.
+
+function expandedForm(num) {
+    let zer = '00000000000000000000000'
+    let str = '';
+    let arr = Array.from(String(num))
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == 0) {
+        }
+        else if (i == arr.length -1 || arr.slice(i+1).join('') == 0) {
+          str += `${arr[i]}${zer.slice(0, (arr.length - i) - 1)}`
+        }
+        else if (i != arr.length - 1) {
+          str += `${arr[i]}${zer.slice(0, (arr.length - i) - 1)} + `
+        }
+        
+      }
+    return str
+    }
