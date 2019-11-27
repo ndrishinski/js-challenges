@@ -38,3 +38,34 @@ function findSenior(list) {
     })
     return list.filter(i => i.age == oldest)
   }
+
+//   Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
+
+// Write a program where Alex can input (n) how many times the hoop goes round and it will return him an encouraging message :)
+
+// -If Alex gets 10 or more hoops, return the string "Great, now move on to tricks".
+
+// -If he doesn't get 10 hoops, return the string "Keep at it until you get it".
+
+function hoopCount (n) {
+    return n < 10 ? 'Keep at it until you get it' : 'Great, now move on to tricks'
+   }
+
+//    You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+
+//    Complete the method which accepts such an array, and returns that single different number.
+   
+//    The input array will always be valid! (odd-length >= 3)
+   
+//    Examples
+//    [1, 1, 2] ==> 2
+//    [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+function stray(numbers) {  
+    let same = [];
+    let dif = [];
+    
+    numbers.map(i => i == numbers[0] ? same.push(i) : dif.push(i))
+    
+    return same.length > dif.length ? dif[0] : same[0]
+  }
