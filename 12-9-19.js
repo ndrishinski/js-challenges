@@ -82,3 +82,34 @@ function isTuringEquation(s){
 function songDecoder(song) {
     return song.replace(/(WUB)+/g, ' ').trim()
   }
+
+//   Personalized greeting
+// Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+
+// Use conditionals to return the proper message:
+
+// case	return
+// name equals owner	'Hello boss'
+// otherwise	'Hello guest'
+
+function greet (name, owner) {
+    return name === owner ? 'Hello boss' : 'Hello guest'
+  }
+
+//   Find the last element of the given argument(s).
+
+// Examples
+// last([1, 2, 3, 4] ) // =>  4
+// last("xyz")         // => "z"
+// last(1, 2, 3, 4)    // =>  4
+// In javascript and CoffeeScript a list will be an array, a string or the list of arguments.
+
+function last(...list){
+    if (list.length == 1 && list[0].length > 1) {
+     let newArr = [...list[0]]
+     return newArr[newArr.length -1 ]
+   } else if (list) {
+     return list[list.length - 1]
+   } 
+   }
+   
